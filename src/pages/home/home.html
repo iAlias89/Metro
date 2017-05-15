@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-navbar>
+  <ion-title>MTCT</ion-title>
+  <ion-buttons end>
+    <button [navPush]="orari" id="calculate" ion-button >Tutti gli Orari</button>
+  </ion-buttons>
+
+  </ion-navbar> 
+   
+</ion-header>
+
+<ion-content ng-class="{expanded:$scope.isExpanded}">
+        <div class="hero slide-up" >
+            <div class="content">
+                <img width="100%; height:30%" src="img/profile-bg.jpg"> 
+            </div>
+        </div>
+
+          <div id="scegliTratta" >
+                <ion-buttons end>
+                  <button ion-button (click)="addMarker()">Dove Sono?</button>
+                </ion-buttons>  
+
+                <ion-label class="item item-input item-select center" id="arrivo">
+                <span class="input-label">Partenza da</span>
+                <ion-select [(ngModel)]="departed" class="center">
+                  <ion-option selected>Nesima</ion-option>
+                  <ion-option>Cibali</ion-option>
+                  <ion-option>Milo</ion-option>
+                  <ion-option>Borgo</ion-option>
+                  <ion-option>Giuffrida</ion-option>
+                  <ion-option>Italia</ion-option>
+                  <ion-option>Galatea</ion-option>
+                  <ion-option>Giovanni XXIII</ion-option>
+                  <ion-option>Stesicoro</ion-option>
+                </ion-select>
+              </ion-label>
+              <ion-label class="item item-input item-select center" id="arrivo">
+                <span class="input-label">Destinazione</span>
+                <ion-select [(ngModel)]="arrived" class="center">
+                  <ion-option>Nesima</ion-option>
+                  <ion-option>Cibali</ion-option>
+                  <ion-option>Milo</ion-option>
+                  <ion-option>Borgo</ion-option>
+                  <ion-option>Giuffrida</ion-option>
+                  <ion-option>Italia</ion-option>
+                  <ion-option>Galatea</ion-option>
+                  <ion-option>Giovanni XXIII</ion-option>
+                  <ion-option selected>Stesicoro</ion-option>
+                </ion-select>
+              </ion-label>
+
+          </div>
+        
+        <button id="next" class="center" (click)="next()" ion-button >Prossima Partenza</button>
+        
+
+    </ion-content>
